@@ -7,14 +7,14 @@ module comparador_gel(
  reg g, e, l;
  always @(a, b)
   begin
-    g = 0;
-    e = 0;
-    l = 0;
+    g =  1'b0;;
+    e =  1'b0;;
+    l =  1'b0;;
     if (a > b)
-      g =1;
+      g =1'b1;
     else if (a < b)
-      l = 1;
+      l = 1'b1;
     else
-      e = 1;
+      e = 1'b1;
   end
 endmodule
