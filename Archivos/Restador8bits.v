@@ -26,7 +26,7 @@ module Restador8bits(
     input [7:0] IN2
     );
     
-    wire [7:0] Sustraendo; //aqui se va a guardar el complemento a 2 para la resta
+    wire [8:0] Sustraendo; //aqui se va a guardar el complemento a 2 para la resta
     reg [8:0] Temp1; //Registro relleno de 9 bits, por si acaso hay overflow
     
     Cmp2 Neg( // se guarda en Sustraendo el, pues, sustraendo
