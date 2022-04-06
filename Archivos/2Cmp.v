@@ -21,11 +21,11 @@
 
 
 module Cmp2(
-    input [7:0] IN, //Entra número binario, 8 bits
-    output [7:0] OUT //Sale número binario, 8 bits
+    input [7:0] IN, //Entra nÃºmero binario, 8 bits
+    output [8:0] OUT //Sale nÃºmero binario, 9 bits por si acaso ocurre overflow
     );
     reg [7:0] Temp;
-    reg [7:0] Temp2;
+    reg [8:0] Temp2;
     always @(*)
     begin
     Temp <= ~IN; //Invierte bits
