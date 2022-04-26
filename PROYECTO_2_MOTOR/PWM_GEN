@@ -1,5 +1,5 @@
 module PWM_Gen(input CLK, input [3:0] LVL, output reg PWM) //input: 15 niveles posibles => num. requeridos del 0 al 15 => 4bits
-                                                       //el resto son de 1 bit: HIGH/LOW, uno CLK, otro define duty cycle del circuito de interfaz de potencia
+                                                       //el resto son de 1 bit: HIGH/LOW, in CLK, out define duty cycle del circuito de interfaz de potencia
 always @ (posedge CLK) begin //ocurre cada vez que CLK cambia a 1
   PWM <= 1;
   case (LVL) 
