@@ -1,0 +1,26 @@
+module PWM_Gen(input CLK, input [3:0] LVL, output reg PWM) //input: 15 niveles posibles => num. requeridos del 0 al 15 => 4bits
+                                                       //el resto son de 1 bit: HIGH/LOW, uno CLK, otro define duty cycle del circuito de interfaz de potencia
+always @ (posedge CLK) begin //ocurre cada vez que CLK cambia a 1
+  PWM <= 1;
+  case (LVL) 
+    #tiempo <= 4'b1111; //LVL = 15
+    #(tiempo*0.93) <= 4'b1110; //LVL = 14
+    #(tiempo*0.87) <= 4'b1101; //LVL = 13
+    #(tiempo*0.80) <= 4'b1100; //LVL = 12
+    #(tiempo*0.73) <= 4'b1011; //LVL = 11
+    #(tiempo*0.67) <= 4'b1010; //LVL = 10
+    #(tiempo*0.60) <= 4'b1001; //LVL = 9
+    #(tiempo*0.53) <= 4'b1000; //LVL = 8
+    #(tiempo*0.47) <= 4'b0111; //LVL = 7
+    #(tiempo*0.40) <= 4'b0110; //LVL = 6
+    #(tiempo*0.33) <= 4'b0101; //LVL = 5
+    #(tiempo*0.26) <= 4'b0100; //LVL = 4
+    #(tiempo*0.20) <= 4'b0011; //LVL = 3
+    #(tiempo*0.13) <= 4'b0010; //LVL = 2
+    #(tiempo*0.7) <= 4'b0001; //LVL = 1
+    #(tiempo*0) <= 4'b0; //LVL = 0
+    endcase
+  PWM <= 0;
+end
+
+  
